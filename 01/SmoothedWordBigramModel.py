@@ -16,6 +16,7 @@ class SmoothedWordBigramModel(WordBigramModel):
         numerator = self.bigram_counts[word][next_word] + 1
         denominator = self.context_counts[word] + len(self.vocabulary)
         return numerator / denominator
+
 if __name__ == "__main__":
     # Compare the output of the smoothed and unsmoothed models
     unsmoothed_model = WordBigramModel()

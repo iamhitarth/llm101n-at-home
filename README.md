@@ -1,4 +1,6 @@
-![At Home](at-home.jpeg)
+<p align="center">
+  <img src="at-home.jpeg" alt="At Home">
+</p>
 # LLM101n at Home
 
 While [Andrej Karpathy](https://twitter.com/karpathy) and the fine folks at [Eureka Labs](https://eurekalabs.ai/)  are busy building out "the worlds obviously best LLM course" at [LLM101n](https://github.com/karpathy/LLM101n) - I've taken the outline for that course and decided to build an "at home" version using assistance from LLMs for others like me who can't wait for the real thing.

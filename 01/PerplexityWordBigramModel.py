@@ -25,8 +25,7 @@ class PerplexityWordBigramModel(SmoothedWordBigramModel):
         for i in range(1, len(words)):  # Start from 1 to skip start token
             if words[i] != self.end_token:
                 self.vocabulary.add(words[i])
-            if i > 1:  # Start bigrams after start token
-                self.bigram_counts[words[i-1]][words[i]] += 1
+            self.bigram_counts[words[i-1]][words[i]] += 1
 
     def probability(self, word1, word2):
         smoothing_factor = 0.01  # Adjust this value as needed - try 1, 0.1 and 0.01
@@ -107,6 +106,7 @@ Key takeaways:
 - Useful for model comparison and tracking improvements
 - Compare scores only within same model and vocabulary
 - Relative comparisons more meaningful than absolute values
+- Lower perplexity scores can be used as an indicator that changes made to the model are improving its performance
 
 Remember: Lower perplexity signifies better prediction, but always consider the context of the model and data when interpreting results.
 
