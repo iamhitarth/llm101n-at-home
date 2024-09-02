@@ -117,4 +117,3 @@ ngram_training_texts = [
     "A teacher guided her students, imparting knowledge and wisdom.",
     "The festival was a celebration of culture, with music, dance, and food from around the world."
 ]
-

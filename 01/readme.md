@@ -82,8 +82,9 @@ In the next chapters, we'll build upon these concepts to create more sophisticat
 2. [WordBigramModel.py](./WordBigramModel.py) - Extend your implementation to a word-level bigram model. How does the generated text differ from the character-level model?
 3. Experiment with different text corpora (e.g., news articles, novels, tweets). How does the choice of training data affect the model's output?
 4. [SmoothedWordBigramModel.py](./SmoothedWordBigramModel.py) - Implement a simple smoothing technique (e.g., add-one smoothing) to handle unseen bigrams. How does this affect the model's performance?
-5. [PerplexityWordBigramModel.py](./PerplexityWordBigramModel.py)
-6. [TextClassification.py](./TextClassification.py) Implement text classification for multiple genres
+5. [PerplexityWordBigramModel.py](./PerplexityWordBigramModel.py) - Demonstrate the concept of perplexity and its uses.
+6. [TextClassification.py](./TextClassification.py) - Implement text classification for multiple genres.
+7. [PredictiveText.py](./PredictiveText.py) - Use bigram model for generating next word for a partial text message.
 
 These exercises will give you hands-on experience with implementing and working with bigram (and n-gram) language models. They cover various aspects including smoothing, evaluation metrics (perplexity), and practical applications like text generation and classification. As you work through these exercises, you'll gain a deeper understanding of the strengths and limitations of these models, setting a strong foundation for exploring more advanced language modeling techniques.
 

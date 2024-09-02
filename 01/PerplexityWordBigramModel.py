@@ -2,17 +2,6 @@ import math
 from SmoothedWordBigramModel import SmoothedWordBigramModel
 
 class PerplexityWordBigramModel(SmoothedWordBigramModel):
-    # def perplexity(self, text):
-    #     words = ['<s>'] + text.split() + ['</s>']
-    #     log_probability = 0
-    #     for i in range(len(words) - 1):
-    #         word, next_word = words[i], words[i+1]
-    #         prob = self.probability(word, next_word)
-    #         if prob > 0:
-    #             log_probability += math.log2(prob)
-        
-    #     return 2 ** (-log_probability / (len(words) - 1))
-
     def __init__(self):
         super().__init__()
         self.total_words = 0
@@ -49,6 +38,18 @@ class PerplexityWordBigramModel(SmoothedWordBigramModel):
         # You can add more preprocessing steps here if needed
         return ['<s>'] + text.lower().split() + ['</s>']
 
+    def predict_next(self, context, n=3):
+        if not context:
+            context = [self.start_token]
+        else:
+            context = [context[-1]]
+
+        choices = list(self.bigram_counts[context[0]].keys())
+        probabilities = [self.probability(context[0], next_word) for next_word in choices]
+
+        # Sort by probability and return top n predictions
+        predictions = sorted(zip(choices, probabilities), key=lambda x: x[1], reverse=True)
+        return predictions[:n]
 
 if __name__ == "__main__":
     # Create and train the model
